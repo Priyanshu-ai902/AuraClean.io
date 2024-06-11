@@ -33,8 +33,8 @@ function SideNav() {
       teamId: activeTeam?._id,
       createdBy: user?.email,
       archive: false,
-      document: '',
-      whiteboard: ''
+      document: "",
+      whiteboard: ""
 
     }).then(resp => {
       if (resp) {
