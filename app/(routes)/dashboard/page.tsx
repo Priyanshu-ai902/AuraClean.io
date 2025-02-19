@@ -36,11 +36,14 @@ function Dashboard() {
     }
   }
   return (
-    <div>
+    <div className='bg-gray-950 h-screen'>
 
-      <Header/>
+      <div className="pb-10">
+        <Header />
+      </div>
 
-      <FileList/>
+
+      <FileList />
 
     </div>
   )

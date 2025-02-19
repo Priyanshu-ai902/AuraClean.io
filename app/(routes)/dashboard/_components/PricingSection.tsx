@@ -1,13 +1,13 @@
 import React from 'react'
 import {
-  
+
     DialogClose,
     DialogContent,
     DialogDescription,
     DialogFooter,
     DialogHeader,
     DialogTitle,
-   
+
 } from "@/components/ui/dialog"
 
 function PricingSection() {

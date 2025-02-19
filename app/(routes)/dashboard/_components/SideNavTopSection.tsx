@@ -20,7 +20,7 @@ export interface Team {
     _id: String
 }
 
-function SideNavTopSection({ user , setActiveTeamInfo}: any) {
+function SideNavTopSection({ user, setActiveTeamInfo }: any) {
     const menu = [
         {
             id: 1,
@@ -38,7 +38,7 @@ function SideNavTopSection({ user , setActiveTeamInfo}: any) {
 
     const router = useRouter();
     const convex = useConvex();
-    
+
     const [activeTeam, setActiveTeam] = useState<Team>();
 
 
@@ -65,11 +65,19 @@ function SideNavTopSection({ user , setActiveTeamInfo}: any) {
     return (
         <div>
             <Popover>
-                <PopoverTrigger>
-                    <div className="flex items-center gap-3  hover:bg-violet-500 p-3 rounded-lg cursor-pointer">
-                        <h2 className='flex gap-2 items-center font-semibold text-[17px]'>
+                <PopoverTrigger className='w-full'>
+                    <div className="text-white  items-center gap-3  bg-gray-700 p-3 rounded-lg cursor-pointer w-full">
+                        
+                        <h2 className='flex gap-2 items-center font-medium '>
+                        <img
+                            src="https://static.vecteezy.com/system/resources/previews/016/012/682/non_2x/eraser-creative-icon-design-free-vector.jpg"
+                            alt="logo"
+                            width={30}
+                            height={30}
+                            className="rounded-full"
+                        />
                             {activeTeam?.teamName}
-                            <ChevronDown />
+                            <ChevronDown/>
                         </h2>
 
                     </div>
@@ -109,10 +117,13 @@ function SideNavTopSection({ user , setActiveTeamInfo}: any) {
                 </PopoverContent>
             </Popover>
 
-            <Button variant='outline' className='w-full justify-start gap-2 font-bold mt-8 bg-blue-500'>
-                <LayoutGrid className='h-5 w-5 ' />
+            <Button variant='outline' className='w-full h-14 justify-start gap-2 font-bold mt-8 bg-black text-white'>
+                <LayoutGrid className='h-6 w-5 ' />
                 All Files
             </Button>
+
+
+            
         </div>
 
 
