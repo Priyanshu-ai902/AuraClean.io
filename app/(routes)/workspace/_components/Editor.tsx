@@ -109,8 +109,8 @@ function Editor({ onSaveTrigger, fileId, fileData }: {onSaveTrigger:any, fileId:
     }
 
     return (
-        <div>
-            <div id='editorjs'></div>
+        <div> 
+            <div id='editorjs' className='font-bold'></div>
         </div>
     )
 }
