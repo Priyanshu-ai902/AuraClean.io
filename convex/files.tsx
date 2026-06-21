@@ -41,6 +41,17 @@ export const updateDocument = mutation({
     }
 })
 
+export const updateFileName = mutation({
+    args: {
+        _id: v.id('files'),
+        fileName: v.string()
+    },
+    handler: async (ctx, args) => {
+        const result = await ctx.db.patch(args._id, { fileName: args.fileName });
+        return result;
+    }
+})
+
 
 
 export const updateWhiteboard = mutation({
@@ -63,5 +74,15 @@ export const getFilesById = query({
     handler: async (ctx, args) => {
         const result = await ctx.db.get(args._id);
         return result;
+    }
+})
+
+export const deleteFile = mutation({
+    args: {
+        _id: v.id('files')
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.delete(args._id);
+        return true;
     }
 })

@@ -67,29 +67,37 @@ function SideNavBottom({ onFileCreate, totalFiles }: any) {
 
 
 
-          {totalFiles < Constant.MAX_FREE_FILE ? <DialogContent>
+          {totalFiles < Constant.MAX_FREE_FILE ? <DialogContent className="bg-zinc-900 border-zinc-800 text-zinc-100 max-w-sm">
             <DialogHeader>
-              <DialogTitle>Create New File
-                <DialogDescription>
-                  <Input placeholder='Enter your file name' className='mt-3'
-                    onChange={(e) => setFileInput(e.target.value)}
-                  />
-                </DialogDescription>
-              </DialogTitle>
+              <DialogTitle className="text-lg font-bold text-white tracking-tight">Create New File</DialogTitle>
             </DialogHeader>
-            <DialogFooter>
-              <Button type='button' className='bg-green-800 hover:bg-green-700'
-                disabled={!(fileInput && fileInput.length > 1)}
-                onClick={() => {
-                  onFileCreate(fileInput);
-                }}>
-                Create
-              </Button>
-              <DialogClose >
-                <Button type='button' className='bg-red-500 hover:bg-red-700'>
+            <div className="py-4">
+              <Input 
+                placeholder="File Name (e.g. Wireframe Spec)" 
+                className="bg-zinc-950 border-zinc-800 text-white focus-visible:ring-violet-500 focus-visible:ring-offset-0"
+                onChange={(e) => setFileInput(e.target.value)}
+              />
+            </div>
+            <DialogFooter className="gap-2 sm:gap-0">
+              <DialogClose asChild>
+                <Button 
+                  type="button" 
+                  variant="outline"
+                  className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-white hover:!bg-zinc-800 hover:!text-white transition-all duration-200"
+                >
                   Cancel
                 </Button>
               </DialogClose>
+              <Button 
+                type="button" 
+                className="bg-violet-600 hover:bg-violet-700 text-white font-medium"
+                disabled={!(fileInput && fileInput.length > 1)}
+                onClick={() => {
+                  onFileCreate(fileInput);
+                }}
+              >
+                Create
+              </Button>
             </DialogFooter>
 
           </DialogContent> : <PricingSection />}
